@@ -75,7 +75,23 @@ body {
 
 /* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
 
+.state-button:hover, .state-button:focus-visible{
+  color: var(--extra-color);
+  background: var(--primary-color);
+}
 
+.state-button:focus-visible {
+  outline: 3px solid var(--triadic-color);
+  outline-offset: 4px;
+}
+
+.state-button:active{
+  transform: scale(0.92);
+}
+
+.state-button, .state-link {
+  transition: color 0.4s ease, background-color 0.3s ease, transform 0.15s ease;
+}
 
 
 /* ---------- Lab 2: The Timing Race ---------- */
@@ -104,6 +120,32 @@ body {
 
 /* YOUR CODE: Lab 2 timing functions (one per racer) */
 
+.racer-linear {
+  transition-timing-function: linear;
+}
+
+.racer-ease {
+  transition-timing-function: ease;
+}
+
+.racer-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.racer-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.racer-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.racer-mine {
+  /* transition: color 0.3s ease, transform 0.15s ease; */
+  background-color: var(--primary-color);
+  transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
 
 
 
@@ -128,7 +170,26 @@ body {
 
 /* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
 
+.tile {
+  transition: all 0.4s ease;
+}
 
+.tile-lift:hover, .tile-lift:focus-visible{
+  transform: translate(0px, -40px);
+  box-shadow: 10px 10px 10px rgb(0 0 0 / 0.4);
+}
+
+.tile-grow:hover, .tile-grow:focus-visible{
+  transform: scale(1.5,1.5);
+}
+
+.tile-spin:hover, .tile-spin:focus-visible{
+  transform:rotate(1turn);
+}
+
+.tile-tilt:hover, .tile-tilt:focus-visible{
+  transform: rotate(30deg);
+}
 
 
 /* ---------- Lab 4: My Hover Gallery ---------- */
@@ -150,8 +211,35 @@ body {
 }
 
 /* YOUR CODE: Lab 4, six effects */
+.effect-card{
+  transition: all 0.4s ease-in;
+}
 
+.effect-1:hover, .effect-1:focus-visible {
+  box-shadow: 10px 10px 20px 20px rgb(255 0 0 / 0.4);
+  transform: rotate(0.5turn);
+}
 
+.effect-2:hover, .effect-2:focus-visible {
+  transform: translate(0,-40px);
+  background-color: black;
+  color:red;
+}
+
+.effect-3:hover, .effect-3:focus-visible{
+  transform:scale(5.5);
+  background-color: rgb(237 237 162);
+}
+
+.effect-4:hover, .effect-4:focus-visible{
+  background-color: var(--triadic-color);
+  transform: rotate(7200deg);
+}
+
+.effect-5:hover, .effect-5:focus-visible{
+  color: var(--extra-color);
+  background-color: var(--primary-color);
+}
 
 /* ---------- PC: 1024px and up ---------- */
 @media (min-width: 1024px) {
